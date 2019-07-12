@@ -1,0 +1,219 @@
+>>> helloIntent = ["hello","hi","hey","hey there","hi there","hello there"]
+>>> type(helloIntent)
+<class 'list'>
+>>> msg = "hi there"
+>>> msg == helloIntent
+False
+>>> a = 12
+>>> b = "12"
+>>> a == b
+False
+>>> msg == helloIntent[0]
+False
+>>> msg == helloIntent[1]
+False
+>>> msg == helloIntent[2]
+False
+>>> msg == helloIntent[3]
+False
+>>> msg == helloIntent[4]
+True
+>>> for i in range(len(helloIntent)):
+	if msg == helloIntent[i]:
+		print("Found")
+
+		
+Found
+>>> msg in helloIntent
+True
+>>> import time
+>>> time.ctime()
+'Fri Jul 12 17:42:56 2019'
+>>> import datetime
+>>> datetime.datetime
+<class 'datetime.datetime'>
+>>> datetime.datetime.now()
+datetime.datetime(2019, 7, 12, 17, 47, 13, 282001)
+>>> print(datetime.datetime.now())
+2019-07-12 17:47:42.118541
+>>> from datetime import datetime as dt
+>>> date = dt.now().date()
+>>> print(date)
+2019-07-12
+>>> import calendar
+>>> print(calendar.month(2019,7))
+     July 2019
+Mo Tu We Th Fr Sa Su
+ 1  2  3  4  5  6  7
+ 8  9 10 11 12 13 14
+15 16 17 18 19 20 21
+22 23 24 25 26 27 28
+29 30 31
+
+>>> print(calendar.calendar(2019))
+                                  2019
+
+      January                   February                   March
+Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+    1  2  3  4  5  6                   1  2  3                   1  2  3
+ 7  8  9 10 11 12 13       4  5  6  7  8  9 10       4  5  6  7  8  9 10
+14 15 16 17 18 19 20      11 12 13 14 15 16 17      11 12 13 14 15 16 17
+21 22 23 24 25 26 27      18 19 20 21 22 23 24      18 19 20 21 22 23 24
+28 29 30 31               25 26 27 28               25 26 27 28 29 30 31
+
+       April                      May                       June
+Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+ 1  2  3  4  5  6  7             1  2  3  4  5                      1  2
+ 8  9 10 11 12 13 14       6  7  8  9 10 11 12       3  4  5  6  7  8  9
+15 16 17 18 19 20 21      13 14 15 16 17 18 19      10 11 12 13 14 15 16
+22 23 24 25 26 27 28      20 21 22 23 24 25 26      17 18 19 20 21 22 23
+29 30                     27 28 29 30 31            24 25 26 27 28 29 30
+
+        July                     August                  September
+Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+ 1  2  3  4  5  6  7                1  2  3  4                         1
+ 8  9 10 11 12 13 14       5  6  7  8  9 10 11       2  3  4  5  6  7  8
+15 16 17 18 19 20 21      12 13 14 15 16 17 18       9 10 11 12 13 14 15
+22 23 24 25 26 27 28      19 20 21 22 23 24 25      16 17 18 19 20 21 22
+29 30 31                  26 27 28 29 30 31         23 24 25 26 27 28 29
+                                                    30
+
+      October                   November                  December
+Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+    1  2  3  4  5  6                   1  2  3                         1
+ 7  8  9 10 11 12 13       4  5  6  7  8  9 10       2  3  4  5  6  7  8
+14 15 16 17 18 19 20      11 12 13 14 15 16 17       9 10 11 12 13 14 15
+21 22 23 24 25 26 27      18 19 20 21 22 23 24      16 17 18 19 20 21 22
+28 29 30 31               25 26 27 28 29 30         23 24 25 26 27 28 29
+                                                    30 31
+
+>>> time.time
+<built-in function time>
+>>> time.time()
+1562934091.3662963
+>>> dt.time()
+Traceback (most recent call last):
+  File "<pyshell#31>", line 1, in <module>
+    dt.time()
+TypeError: descriptor 'time' of 'datetime.datetime' object needs an argument
+>>> dt.now().time()
+datetime.time(17, 52, 35, 583031)
+>>> time = dt.now().time()
+>>> print(time)
+17:52:40.015291
+>>> import time
+>>> for i in range(10):
+	c_time = dt.now().time()
+	print(c_time)
+	time.sleep(1)
+
+	
+17:53:49.301947
+17:53:50.370263
+17:53:51.406001
+17:53:52.438502
+17:53:53.483858
+17:53:54.525913
+17:53:55.599888
+17:53:56.649330
+17:53:57.700595
+17:53:58.752894
+>>> import threading
+>>> threading.current_thread
+<function current_thread at 0x000002733E013C80>
+>>> threading.current_thread()
+<_MainThread(MainThread, started 24880)>
+>>> threading.current_thread().get_name()
+Traceback (most recent call last):
+  File "<pyshell#46>", line 1, in <module>
+    threading.current_thread().get_name()
+AttributeError: '_MainThread' object has no attribute 'get_name'
+>>> dt
+<class 'datetime.datetime'>
+>>> date = dt.now()
+>>> print(date)
+2019-07-12 18:02:40.420219
+>>> date = dt.now().time()
+>>> date = dt.now().date()
+>>> print(date)
+2019-07-12
+>>> date.strftime("%d/%m/%y")
+'12/07/19'
+>>> date.strftime("%d/%m/%y,%a")
+'12/07/19,Fri'
+>>> time = dt.now().time()
+>>> time.strftime("%H:%M:%S,%p")
+'18:03:42,PM'
+>>> 
+ RESTART: C:/Users/asus/Documents/Data/DataTransfer/BMPL_Batches/2019/July/PythonEveRegular/ChatCode_5.py 
+Enter your message : hi
+Hello User
+Enter your message : hello
+Hello User
+Enter your message : date
+Traceback (most recent call last):
+  File "C:/Users/asus/Documents/Data/DataTransfer/BMPL_Batches/2019/July/PythonEveRegular/ChatCode_5.py", line 15, in <module>
+    elif msg in dateIntent:
+NameError: name 'dateIntent' is not defined
+>>> 
+ RESTART: C:/Users/asus/Documents/Data/DataTransfer/BMPL_Batches/2019/July/PythonEveRegular/ChatCode_5.py 
+Enter your message : hi
+Hello User
+Enter your message : hello
+Hello User
+Enter your message : date
+12/07/19,Fri
+Enter your message : time
+18:07:36,PM
+Enter your message : bye
+Bye User
+>>> 
+ RESTART: C:/Users/asus/Documents/Data/DataTransfer/BMPL_Batches/2019/July/PythonEveRegular/ChatCode_5.py 
+Enter your message : date
+12/07/19,Fri
+Enter your message : Date
+I don't understand
+Enter your message : bye
+Bye User
+>>> 
+ RESTART: C:/Users/asus/Documents/Data/DataTransfer/BMPL_Batches/2019/July/PythonEveRegular/ChatCode_5.py 
+Enter your message : HI
+I don't understand
+Enter your message : HEY
+I don't understand
+Enter your message : HELLO
+I don't understand
+Enter your message : 
+ RESTART: C:/Users/asus/Documents/Data/DataTransfer/BMPL_Batches/2019/July/PythonEveRegular/ChatCode_5.py 
+Enter your message : HI
+Hello User
+Enter your message : HEY
+Hello User
+Enter your message : HELLO
+Hello User
+Enter your message : DATE
+12/07/19,Fri
+Enter your message : DaTe
+12/07/19,Fri
+Enter your message : bye
+Bye User
+>>> import os
+>>> os.getcwd()
+'C:\\Users\\asus\\Documents\\Data\\DataTransfer\\BMPL_Batches\\2019\\July\\PythonEveRegular'
+>>> os.listdir()
+['01-Code', 'ChatCode_1.py', 'ChatCode_2.py', 'ChatCode_3.py', 'ChatCode_4.py', 'ChatCode_5.py', 'ChatCode_6.py', 'Loops', 'StringsConsole.py']
+>>> os.chdir("C:\Users\asus\Music")
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+>>> os.chdir(r"C:\Users\asus\Music")
+>>> os.listdir()
+['5-Varlaam Varlaam Vaa-SenSongsMp3.Co.mp3', 'BIGGEST BASS DROP EVER! (EXTREME BASS TEST!!!).mp3', 'Cristiano Ronaldo - Faded Best Moments 2017 • 100.000 Subscribers.mp3', 'desktop.ini', 'Dub Theri Step with Lyrics   Theri   Vijay, Samantha, Amy Jackson   Atlee   G.V.Prakash Kumar.ogg', 'Galti.mp3', 'Kaththi Theme…The Sword of Destiny - Full Audio.ogg', 'music_1.ogg', 'Na Ja.mp3', 'Shape of You.mp3', 'Street Fighter V Soundtrack - Main Menu.ogg', "Street Fighter V Soundtrack - Ryu's Theme.ogg", 'StreetFighter.mp3', 'Top 10 Tamil Mass BGM (Theme Song) 2011-2016.mp4', 'Vedalam - The Theri Theme Lyric   Ajith Kumar, Shruti Haasan   Anirudh.ogg']
+>>> os.startfile('Cristiano Ronaldo - Faded Best Moments 2017 • 100.000 Subscribers.mp3')
+>>> import random
+>>> songs = os.listdir()
+>>> s = random.choice(songs)
+>>> os.startfile(s)
+>>> import glob
+>>> glob.glob('*.mp3')
+['5-Varlaam Varlaam Vaa-SenSongsMp3.Co.mp3', 'BIGGEST BASS DROP EVER! (EXTREME BASS TEST!!!).mp3', 'Cristiano Ronaldo - Faded Best Moments 2017 • 100.000 Subscribers.mp3', 'Galti.mp3', 'Na Ja.mp3', 'Shape of You.mp3', 'StreetFighter.mp3']
+>>> for root, folder, file in os.walk("C:\Python37"):
+	print(root,folder,file)
