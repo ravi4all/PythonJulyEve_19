@@ -1,0 +1,12 @@
+List
+=> collection of any type of data
+- represented by - []
+Tuples
+=> similar to list but cannot be modified (immutable)
+- represented by - ()
+Dictionary
+=> data stored in a key:value pair
+- represented by - {key:value}
+Sets
+=> collection of unstructured unique data
+- represented by - {}
