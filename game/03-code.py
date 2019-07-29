@@ -10,6 +10,8 @@ red = 255,0,0
 
 x = 0
 y = 0
+moveX = 1
+moveY = 1
 while True:
 
     for event in pygame.event.get():
@@ -18,7 +20,18 @@ while True:
             quit()
     screen.fill(white)
     pygame.draw.rect(screen,red,[x,y,50,50])
-    x = x + 1
-    y += 1
+    # x = x + 1
+    # y += 1
+    x += moveX
+    y += moveY
+
+    if x > width - 50:
+        moveX = -1
+    elif x < 0:
+        moveX = 1
+    elif y > height - 50:
+        moveY = -1
+    elif y < 0:
+        moveY = 1
 
     pygame.display.flip()
