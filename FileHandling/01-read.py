@@ -1,0 +1,5 @@
+# file = open('data_1.txt',mode='r',encoding='utf-8')
+file = open('data_1.txt',mode='rb')
+data = file.read()
+print(data.decode())
+file.close()
